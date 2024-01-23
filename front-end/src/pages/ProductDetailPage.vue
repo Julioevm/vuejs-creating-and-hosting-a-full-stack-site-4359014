@@ -25,6 +25,5 @@ export default {
         };
     },
     components: NotFoundPage,
-    components: { NotFoundPage }
 }
 </script>
