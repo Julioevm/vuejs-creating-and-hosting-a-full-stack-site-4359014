@@ -1,14 +1,12 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <h1>Hello from Vue!</h1>
   <router-view></router-view>
 </template>
 
 <script>
-
 export default {
   name: "App",
-  components: {
-  },
+  components: {},
 };
 </script>
 

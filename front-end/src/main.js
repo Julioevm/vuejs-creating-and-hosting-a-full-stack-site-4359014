@@ -1,13 +1,23 @@
 import { createApp } from 'vue'
-import * as VueRouter from 'vue-router'
 import App from './App.vue'
-import ShoppingCartPageVue from './pages/ShoppingCartPage.vue'
-import ProductDetailsPageVue from './pages/ProductDetailsPage.vue'
-import ProductsPageVue from './pages/ProductsPage.vue'
+import './main.css';
+import * as VueRouter from 'vue-router'
+import ShoppingCartPage from './pages/ShoppingCartPage.vue';
+import ProductsPage from './pages/ProductsPage.vue';
+import ProductDetailPage from './pages/ProductDetailPage.vue';
 
-createApp(App).use(VueRouter.creareRouter({
+createApp(App)
+.use(VueRouter.createRouter({
   history: VueRouter.createWebHistory(process.env.BASE_URL),
-  routes: [{path: '/cart', component: ShoppingCartPageVue},
-{path: '/products/:productId', component: ProductDetailsPageVue},
-{path: '/products', component: ProductsPageVue}]
-})).mount('#app')
+  routes: [{
+    path: '/cart',
+    component: ShoppingCartPage,
+  }, {
+    path: '/products',
+    component: ProductsPage,
+  }, {
+    path: '/products/:productId',
+    component: ProductDetailPage,
+  }]
+}))
+.mount('#app')
