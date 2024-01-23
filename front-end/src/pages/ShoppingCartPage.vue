@@ -1,9 +1,27 @@
 <template>
-  <h1>Shopping Cart Page</h1>
+  <h1>Shopping Cart</h1>
+  <div v-if="cartItems.length > 0">
+    <div v-for="product in cartItems" class="product-container" :key="product.id">
+      <img :src="product.imageName" class="product-image" />
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.price }}</p>
+      <button class="remove-button">Remove from Cart</button>
+    </div>
+    <button class="checkout-button">Proceed to checkout</button>
+  </div>
+  <div v-else>
+    <p>Your cart is empty!</p>
+  </div>
 </template>
 
 <script>
+import { cartItems } from '@/temp-data';
 export default {
   name: "ShoppingCartPage",
+  data() {
+    return {
+      cartItems,
+    }
+  }
 }
 </script>
